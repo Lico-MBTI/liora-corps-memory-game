@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZP4LH2EJX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3ZP4LH2EJX');
+</script>
+	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リオラ軍団 名シーン神経衰弱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ★ヘッダーバー構造（ボタンは初期状態で非表示） -->
+<header class="header-bar">
+  <h1>リオラ軍団 サムネイル神経衰弱</h1>
+  <button id="show-result-btn" class="result-btn is-hidden" onclick="showClearModal()">🏆 結果を見る</button>
+</header>
+	
+  <div class="game-board" id="board"></div>
+
+<!-- ペア成立時のシーン詳細ポップアップ -->
+<div id="pair-modal" class="modal-overlay">
+  <div class="modal-content" style="max-width: 400px; text-align: center; position: relative;">
+    <button class="close-x-btn" onclick="closePairModal()">&times;</button>
+    <div style="border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
+      <img id="pair-img" src="" alt="" style="width: 100%; display: block;">
+    </div>
+    
+    <!-- ★ここ：以前 context を入れていた枠に ytTitle を表示 -->
+    <p id="pair-context" style="font-size: 0.85rem; color: #cdd6f4; line-height: 1.5; text-align: left; background: #181825; padding: 12px; border-radius: 6px; margin: 0; font-weight: bold;"></p>
+    
+    <!-- 揃った1ペアの動画リンクが入るコンテナ -->
+    <div id="pair-yt-container" style="margin-top: 12px;"></div>
+  </div>
+</div>
+
+<!-- 全クリア時のポップアップ -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content" style="position: relative; max-width: 480px; max-height: 85vh; overflow-y: auto;">
+      <button class="close-x-btn" onclick="closeModal()">&times;</button>
+      <h2>🎉 ALL CLEAR! 🎉</h2>
+      
+      <!-- ★追加：ランダムセリフ（ご褒美ボイス）表示エリア -->
+      <div id="clear-quote-box" class="clear-quote-box">
+        <div id="clear-quote-speaker" class="clear-quote-speaker"></div>
+        <div id="clear-quote-text" class="clear-quote-text"></div>
+      </div>
+
+      <p class="modal-quote" style="margin-top: 15px; font-size: 0.95rem;">🎬 今回登場した動画はこちら ↓</p>
+      
+      <!-- ★追加：サムネなしの6動画リストコンテナ -->
+      <div id="yt-list-container" class="yt-list-container"></div>
+
+      <p style="font-size: 0.75rem; color: #a6adc8; margin-top: 20px; text-align: center; padding: 10px 10px 0 10px; border-top: 1px solid #45475a;">
+        ゲーム作成：<a href="https://x.com/ricopinchannel" target="_blank" style="color: #89b4fa; text-decoration: none;">@ricopinchannel</a>
+      </p>
+
+      <!-- ★クリア画面のボタン2つ -->
+      <div style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+        <button class="close-btn" style="background: #45475a;" onclick="closeModal()">盤面を見る</button>
+        <button class="close-btn" style="background: #89b4fa; color: #1e1e2e; font-weight: bold;" onclick="location.reload()">🔄 別の動画を探す</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
